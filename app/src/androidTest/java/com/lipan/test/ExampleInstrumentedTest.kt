@@ -1,4 +1,4 @@
-package com.lipan.test.myapplication
+package com.lipan.test
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

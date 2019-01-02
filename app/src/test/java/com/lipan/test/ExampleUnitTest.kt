@@ -1,4 +1,4 @@
-package com.lipan.test.myapplication
+package com.lipan.test
 
 import org.junit.Test
 

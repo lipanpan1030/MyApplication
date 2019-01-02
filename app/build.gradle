@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.lipan.test.myapplication"
+        applicationId "com.lipan.test"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
