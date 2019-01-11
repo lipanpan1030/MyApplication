@@ -21,9 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init1();
-
         init2();
-
     }
 
     private void init1() {
