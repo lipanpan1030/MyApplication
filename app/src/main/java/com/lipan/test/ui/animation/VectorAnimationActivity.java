@@ -1,5 +1,6 @@
 package com.lipan.test.ui.animation;
 
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,9 +13,11 @@ import com.lipan.test.R;
 
 public class VectorAnimationActivity extends AppCompatActivity {
 
-    private ObjectAnimator mAnimator;
+    private ObjectAnimator mRotationAnimator;
+    private AnimatorSet mSet;
     private ImageView mImg;
     private FrameLayout mRoot;
+    private ObjectAnimator mTranslationAnimator;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,28 +30,29 @@ public class VectorAnimationActivity extends AppCompatActivity {
     }
 
     public void begin(View view) {
-        if (mAnimator == null) {
-            mAnimator = ObjectAnimator.ofFloat(mRoot, "rotation", 0, 360);
-            mAnimator.setDuration(600);
-            mAnimator.start();
+        if (mSet == null) {
+            mSet = new AnimatorSet();
+            mRotationAnimator = ObjectAnimator.ofFloat(mRoot, "rotation", 0, 360);
+            mRotationAnimator.setDuration(600);
+
+            mTranslationAnimator = ObjectAnimator.ofFloat(mRoot, "translationY", 300f);
+            mTranslationAnimator.setDuration(600);
+
+            mSet.playTogether(mRotationAnimator, mTranslationAnimator);
         } else {
-            if (mAnimator.isRunning()) {
+            if (mSet.isRunning()) {
                 return;
-            } else if (mAnimator.isPaused()) {
-                mAnimator.resume();
+            } else if (mSet.isPaused()) {
+                mSet.resume();
             } else {
-                mAnimator.start();
+                mSet.start();
             }
         }
     }
 
-    private void beginCircleAnimator() {
-
-    }
-
     public void pause(View view) {
-        if (mAnimator != null) {
-            mAnimator.pause();
+        if (mSet != null) {
+            mSet.pause();
         }
     }
 
