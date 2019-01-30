@@ -12,7 +12,7 @@ import com.lipan.test.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class SnapDemoActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private List<Integer> mImagesList;
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_snap);
         initView();
     }
 

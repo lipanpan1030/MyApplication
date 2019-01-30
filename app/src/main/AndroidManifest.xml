@@ -35,7 +35,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.snap.MainActivity">
+        <activity android:name=".ui.snap.SnapDemoActivity"
+            android:label="横向滚动">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
